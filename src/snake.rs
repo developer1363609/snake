@@ -94,7 +94,11 @@ impl Snake {
         (head_block.x,head_block.y)
     }
 
-    pub fn head_direction(&self,dir:Option<Direction>) -> (i32,i32) {
+    pub fn head_direction(&self) -> Direction {
+        self.moving_direction
+    }
+
+    pub fn next_head_direction(&self,dir:Option<Direction>) -> (i32,i32) {
         let (head_x,head_y):(i32,i32) = self.head_position();
         let mut moving_dir = self.moving_direction;
         match dir {
